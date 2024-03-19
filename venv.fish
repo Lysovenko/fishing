@@ -1,6 +1,7 @@
 # Defined in /tmp/fish.BquLRU/venv.fish @ line 2
 function venv
-    if set -q $argv[1]
+    if ! set -q argv[1]
+        echo -n "Available venvs:"
         find $HOME/usr/venvs -maxdepth 1 -type d -printf '%P\n'
         return
     end
